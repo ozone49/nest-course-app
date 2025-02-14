@@ -15,6 +15,11 @@ export class AppService {
       name: 'Verapat',
       lastname: 'Musikapala',
       age: 19,
-    }
+    };
+  }
+  getGit(){
+    return {
+      name:'Git and Github using',
+    };
   }
 }

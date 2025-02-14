@@ -10,10 +10,13 @@ export class AppController {
     return this.appService.getHello();
   }
 
-
-
   @Get('/showjson') 
   getJson(){
     return this.appService.getJson();
+  }
+
+  @Get('/showjson2') 
+  getGit(){
+    return this.appService.getGit();
   }
 }
