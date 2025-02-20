@@ -22,4 +22,7 @@ export class AppService {
       name:'Git and Github using',
     };
   }
+  postman() : string{
+    return 'we use postman'
+  }
 }

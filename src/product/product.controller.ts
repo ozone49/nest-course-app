@@ -1,12 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { ProductService } from './product.service';
 import { UtilityService } from 'src/shared/utility/utility.service';
 import { GlobalHelperService } from 'src/shared/global-helper/global-helper.service';
 
-@Controller('user')
-export class AppController {
+@Controller('product')
+export class ProductController {
   constructor(
-    private readonly appService: AppService,
+    private readonly productService: ProductService,
     private readonly utilityService: UtilityService,
     private readonly globalHelperService: GlobalHelperService,
   ) {}
@@ -17,23 +17,17 @@ export class AppController {
   }
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  productFunc(): string {
+    return this.productService.productFunc();
   }
 
-  @Get('/showjson') 
-  getJson(){
-    return this.appService.getJson();
+  @Get('/ProductJson')
+  productJson() {
+    return this.productService.productJson();
   }
-
-  @Get('/showjson2') 
-  getGit(){
-    return this.appService.getGit();
-  }
-
-  @Get('/usepostman') 
-  postman(){
-    return this.appService.postman();
+    
+  @Get('/shared')
+  sharedFunc() {
+    return this.utilityService.shareFunc();
   }
 }
-
